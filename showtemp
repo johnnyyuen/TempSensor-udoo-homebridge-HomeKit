@@ -1,0 +1,6 @@
+#!/bin/bash
+TEMP_RAW=`cat /sys/class/i2c-dev/i2c-1/device/1-0048/temp1_input`
+TEMP_SCALE=0.001
+python << EOF
+  print( $TEMP_RAW * $TEMP_SCALE )
+EOF
